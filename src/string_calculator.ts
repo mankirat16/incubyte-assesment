@@ -11,7 +11,10 @@ export function add(numbers: string): number {
 
   const all_numbers = numbers.split(delimiter);
 
-
+  const negatives = all_numbers.filter((n) => Number(n) < 0);
+  if (negatives.length > 0) {
+    throw new Error(`negative numbers not allowed ${negatives.join(", ")}`);
+  }
 
   let sum: number = 0;
 
