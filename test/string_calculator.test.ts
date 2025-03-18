@@ -1,7 +1,7 @@
 import { add } from "../src/string_calculator";
 
 describe("String calculator", () => {
-    
+  
   test("should return 0 for empty string", () => {
     expect(add("")).toBe(0);
   });
@@ -12,5 +12,9 @@ describe("String calculator", () => {
 
   test("should return the sum of numbers separated by a comma", () => {
     expect(add("1,2,3,4")).toBe(10);
+  });
+
+  test("should be able to handle new line as delimiter", () => {
+    expect(add("2\n3")).toBe(5);
   });
 });
