@@ -1,7 +1,7 @@
 import { add } from "../src/string_calculator";
 
 describe("String calculator", () => {
-  
+
   test("should return 0 for empty string", () => {
     expect(add("")).toBe(0);
   });
@@ -16,5 +16,9 @@ describe("String calculator", () => {
 
   test("should be able to handle new line as delimiter", () => {
     expect(add("2\n3")).toBe(5);
+  });
+
+  test('should be able to handle multiple types of delimiters and return the sum of numbers', () => {
+    expect(add("//;\n5;7")).toBe(12);
   });
 });
