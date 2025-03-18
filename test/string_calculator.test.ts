@@ -21,4 +21,8 @@ describe("String calculator", () => {
   test('should be able to handle multiple types of delimiters and return the sum of numbers', () => {
     expect(add("//;\n5;7")).toBe(12);
   });
+
+  test('should throw an exception if any negative number is present in the string', () => {
+    expect(() => add("1,-2,3")).toThrow("negative numbers not allowed -2");
+  });
 });
