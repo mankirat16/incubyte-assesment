@@ -31,4 +31,10 @@ describe("String calculator", () => {
     expect(add("1000,2")).toBe(1002);
     expect(add("1001,1002,3")).toBe(3);
   });
+
+  test('should support multi-character custom delimiters', () => {
+    const input = "//[***]\n1***2***3";
+    const result = add(input);
+    expect(result).toBe(6);
+  });
 });
